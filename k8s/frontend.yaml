@@ -14,7 +14,7 @@ spec:
     spec:
       containers:
       - name: frontend
-        image: testapp3wow-ux/buyc_corp-main-frontend:latest
+        image: testapp3wow-ux/cardeal2-frontend:latest
         ports:
         - containerPort: 3000
         env:

@@ -14,7 +14,7 @@ spec:
     spec:
       containers:
       - name: backend
-        image: testapp3wow-ux/buyc_corp-main-backend:latest
+        image: testapp3wow-ux/cardeal2-backend:latest
         ports:
         - containerPort: 9000
         env:

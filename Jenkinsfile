@@ -31,15 +31,13 @@ pipeline {
         stage('Push Images to Registry') {
             steps {
                 script {
-                    // Commented out until Docker Hub credentials are configured
-                    // withCredentials([usernamePassword(credentialsId: 'docker-hub-credentials', usernameVariable: 'DOCKER_USER', passwordVariable: 'DOCKER_PASSWORD')]) {
-                    //     sh 'docker login -u $DOCKER_USER -p $DOCKER_PASSWORD'
-                    //     sh 'docker tag buyc_corp-main-backend $DOCKER_USER/buyc_corp-main-backend:latest'
-                    //     sh 'docker tag buyc_corp-main-frontend $DOCKER_USER/buyc_corp-main-frontend:latest'
-                    //     sh 'docker push $DOCKER_USER/buyc_corp-main-backend:latest'
-                    //     sh 'docker push $DOCKER_USER/buyc_corp-main-frontend:latest'
-                    // }
-                    echo 'Image push stage - configure Docker Hub credentials and uncomment to enable'
+                    withCredentials([usernamePassword(credentialsId: 'docker-hub-credentials', usernameVariable: 'DOCKER_USER', passwordVariable: 'DOCKER_PASSWORD')]) {
+                        sh 'echo $DOCKER_PASSWORD | docker login -u $DOCKER_USER --password-stdin'
+                        sh 'docker tag buyc_corp-main-backend testapp3wow-ux/cardeal2-backend:latest'
+                        sh 'docker tag buyc_corp-main-frontend testapp3wow-ux/cardeal2-frontend:latest'
+                        sh 'docker push testapp3wow-ux/cardeal2-backend:latest'
+                        sh 'docker push testapp3wow-ux/cardeal2-frontend:latest'
+                    }
                 }
             }
         }
