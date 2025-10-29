@@ -8,8 +8,8 @@ on:
 
 env:
   DOCKER_REGISTRY: docker.io
-  FRONTEND_IMAGE: testapp3wow-ux/buyc-frontend
-  BACKEND_IMAGE: testapp3wow-ux/buyc-backend
+  FRONTEND_IMAGE: ashwinjoeoffl/buyc-frontend
+  BACKEND_IMAGE: ashwinjoeoffl/buyc-backend
   K8S_NAMESPACE: buyc-corp
 
 jobs:
