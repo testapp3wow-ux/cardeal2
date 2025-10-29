@@ -70,3 +70,5 @@ To run the BuyCar Corp locally, follow these steps:
 
   
 # cardeal2
+
+## Last Deployment: Wed Oct 29 14:44:33 IST 2025
